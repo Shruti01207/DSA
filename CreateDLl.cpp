@@ -16,6 +16,7 @@ Node * CreateDLl(  );
 Node *TogiveTail_PrintDLl(Node *head);
 void ReversePrintedLl(Node * tail);
 Node * InsertAtBeg(Node *head,int data);
+void  InsertAtLast(Node *tail,int data);
 int main( ){
  Node * head=CreateDLl( );
  Node *tail = TogiveTail_PrintDLl(head);
@@ -24,6 +25,8 @@ ReversePrintedLl(tail);
 Node * newhead=InsertAtBeg(head,20);
 head=newhead;
 cout<<endl;
+tail=TogiveTail_PrintDLl(head);
+InsertAtLast(tail,70);
 tail=TogiveTail_PrintDLl(head);
 }
 
@@ -70,6 +73,16 @@ head->prev=newnode;
 newnode->next=head;
 head=newnode;
 return head;
+
+
+
+}
+void  InsertAtLast(Node *tail,int data){
+
+Node * newnode= new Node(data);
+
+tail->next=newnode;
+newnode->prev=tail;
 
 
 
